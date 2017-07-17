@@ -1,12 +1,12 @@
 # Syntax SELECT column1, column2, columnN FROM table_name;
 # SELECT * FROM table_name;
 
-Select greyatom.CustomerID, CustomerName, ContactName from greyatom.Customers;
+Select CustomerID, CustomerName from greyatom.Customers;
 Select * from greyatom.Customers;
 
 
 # Where claues
-# Syntax SELECT column1, column2, column3 FROM table_name WHERE [condition]
+# Syntax SELECT column1, column2, column3 FROM table_name WHERE [condition1]
 
 Select CustomerID, CustomerName, Address, City from greyatom.Customers WHERE City='London';
 
@@ -41,7 +41,7 @@ Select distinct City from greyatom.Customers;
 #	WHERE SALARY LIKE '_2%3'	Finds any values that have a 2 in the second position and end with a 3.
 #	WHERE SALARY LIKE '2___3'	Finds any values in a five-digit number that start with 2 and end with 3.
 
-SELECT * FROM greyatom.Customers WHERE CustomerName LIKE 'Franc%';
+SELECT * FROM greyatom.Customers WHERE CustomerName LIKE 'Fra%';
 
 
 
@@ -55,10 +55,12 @@ SELECT * FROM greyatom.Customers ORDER BY CustomerName DESC;
 # group by clause
 # Syntax SELECT column1, column2 FROM table_name WHERE [ conditions ] GROUP BY column1, column2 ORDER BY column1, column2
 # Must follow the conditions in the WHERE clause and must precede the ORDER BY clause if one is used.
-SELECT CustomerName, City FROM Customers WHERE City='London';
-SELECT CustomerName, City FROM Customers WHERE City='London' GROUP BY City;
+SELECT CustomerName, City FROM customers WHERE City='London';
+SELECT CustomerName, City FROM greyatom.Customers WHERE City='London' GROUP BY CustomerID;
 
 
+
+select city, count(CustomerID) as count_var from greyatom.customers group by city order by count(CustomerID) desc;
 
 
 

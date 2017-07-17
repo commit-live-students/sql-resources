@@ -55,7 +55,7 @@ select ord.CustomerID, cus.CustomerName, ord.OrderID
 #    LEFT JOIN table2
 #    ON table1.common_field = table2.common_field;
 
-select ord.CustomerID, cus.CustomerName, ord.OrderID 
+select cus.CustomerID, cus.CustomerName, ord.OrderID 
 	from greyatom.customers cus
     LEFT join greyatom.orders ord
     on ord.CustomerID = cus.CustomerID;

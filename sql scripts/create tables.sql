@@ -1,8 +1,9 @@
+# create database <database>
 create database greyatom;
 
 use greyatom;
 
-create table greyatom.Categories (
+create table Categories (
 	CategoryID int(11) PRIMARY KEY auto_increment,
     CategoryName varchar(50) not null,
     Description varchar(250)

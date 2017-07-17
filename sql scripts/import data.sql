@@ -60,12 +60,14 @@ SET OrderDate = STR_TO_DATE(@var2, '%m/%d/%Y');
 
 select * from greyatom.orders;
 
-INSERT INTO greyatom.customers 
-	(CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country) 
-    values (9876, "sean", "sean", "Andheri", "Mumbai", "421503", "India");
-    
 Select * from greyatom.customers;
 
 select * from greyatom.employees;
 
 select * from greyatom.shippers;
+
+use greyatom;
+INSERT INTO greyatom.customers 
+	(CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country) 
+    values (9876, "sean", "sean", "Andheri", "Mumbai", "421503", "India");
+    
